@@ -1,0 +1,16 @@
+framework module KarteTracker {
+    umbrella header "KarteTracker.h"
+    export *
+    module * { export * }
+    link framework "WebKit"
+    link framework "AdSupport"
+    header "KarteConstants.h"
+    header "KarteLogger.h"
+    header "KarteRemoteNotificationHandler.h"
+    header "KarteTrackerConfig.h"
+    header "KarteTrackerConfigBuilder.h"
+    header "KarteTrackerJsUtil.h"
+    header "KarteTrackerUtil.h"
+    header "KarteVariable.h"
+    header "KarteVariables.h"
+}

@@ -1,0 +1,175 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXFileReference section */
+		210990E421746F5B00A90EE7 /* KarteTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KarteTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		210990E821746F5C00A90EE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		210990F021748BB100A90EE7 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		210990DA21746F5B00A90EE7 = {
+			isa = PBXGroup;
+			children = (
+				210990E621746F5B00A90EE7 /* KarteTracker */,
+				210990E521746F5B00A90EE7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		210990E521746F5B00A90EE7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				210990E421746F5B00A90EE7 /* KarteTracker.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		210990E621746F5B00A90EE7 /* KarteTracker */ = {
+			isa = PBXGroup;
+			children = (
+				210990E821746F5C00A90EE7 /* Info.plist */,
+				210990F021748BB100A90EE7 /* module.modulemap */,
+			);
+			path = KarteTracker;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		210990E321746F5B00A90EE7 /* KarteTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 210990EC21746F5C00A90EE7 /* Build configuration list for PBXNativeTarget "KarteTracker" */;
+			buildPhases = (
+				210990EF217486B900A90EE7 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KarteTracker;
+			productName = KarteTracker;
+			productReference = 210990E421746F5B00A90EE7 /* KarteTracker.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		210990DB21746F5B00A90EE7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "Yappli, Inc.";
+				TargetAttributes = {
+					210990E321746F5B00A90EE7 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+				};
+			};
+			buildConfigurationList = 210990DE21746F5B00A90EE7 /* Build configuration list for PBXProject "KarteTracker" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 210990DA21746F5B00A90EE7;
+			productRefGroup = 210990E521746F5B00A90EE7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				210990E321746F5B00A90EE7 /* KarteTracker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		210990EF217486B900A90EE7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "BASE_NAME=karte-tracker-ios-${CURRENT_PROJECT_VERSION}\nMODULES_FOLDER_PATH=${EXECUTABLE_FOLDER_PATH}/Modules\ncurl -fsL https://github.com/plaidev/karte-tracker-ios/archive/v${CURRENT_PROJECT_VERSION}.zip | tar -xf - -C ${PROJECT_TEMP_ROOT}\nmkdir -p ${TARGET_BUILD_DIR}/${PUBLIC_HEADERS_FOLDER_PATH} && cp ${PROJECT_TEMP_ROOT}/${BASE_NAME}/KarteTracker.embeddedframework/KarteTracker.framework/Headers/*.h $_\nmkdir -p ${TARGET_BUILD_DIR}/${MODULES_FOLDER_PATH} && cp ${PROJECT_DIR}/${TARGET_NAME}/module.modulemap $_\nlipo -extract $( echo ${ARCHS} | sed -e 's/ / -extract /g' ) ${PROJECT_TEMP_ROOT}/${BASE_NAME}/KarteTracker.embeddedframework/KarteTracker.framework/KarteTracker -o ${TARGET_BUILD_DIR}/${EXECUTABLE_FOLDER_PATH}/${TARGET_NAME}\nchmod 644 ${TARGET_BUILD_DIR}/${EXECUTABLE_FOLDER_PATH}/${TARGET_NAME}\nrm -rf ${PROJECT_TEMP_ROOT}/${BASE_NAME}\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		210990EA21746F5C00A90EE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CURRENT_PROJECT_VERSION = 1.4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		210990EB21746F5C00A90EE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CURRENT_PROJECT_VERSION = 1.4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		210990ED21746F5C00A90EE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = KarteTracker/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.plaid.KarteTracker;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+			};
+			name = Debug;
+		};
+		210990EE21746F5C00A90EE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = KarteTracker/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.plaid.KarteTracker;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		210990DE21746F5B00A90EE7 /* Build configuration list for PBXProject "KarteTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				210990EA21746F5C00A90EE7 /* Debug */,
+				210990EB21746F5C00A90EE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		210990EC21746F5C00A90EE7 /* Build configuration list for PBXNativeTarget "KarteTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				210990ED21746F5C00A90EE7 /* Debug */,
+				210990EE21746F5C00A90EE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 210990DB21746F5B00A90EE7 /* Project object */;
+}
