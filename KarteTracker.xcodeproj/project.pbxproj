@@ -103,7 +103,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "BASE_NAME=karte-tracker-ios-${CURRENT_PROJECT_VERSION}\nMODULES_FOLDER_PATH=${EXECUTABLE_FOLDER_PATH}/Modules\ncurl -fsL https://github.com/plaidev/karte-tracker-ios/archive/v${CURRENT_PROJECT_VERSION}.zip | tar -xf - -C ${PROJECT_TEMP_ROOT}\nmkdir -p ${TARGET_BUILD_DIR}/${PUBLIC_HEADERS_FOLDER_PATH} && cp ${PROJECT_TEMP_ROOT}/${BASE_NAME}/KarteTracker.embeddedframework/KarteTracker.framework/Headers/*.h $_\nmkdir -p ${TARGET_BUILD_DIR}/${MODULES_FOLDER_PATH} && cp ${PROJECT_DIR}/${TARGET_NAME}/module.modulemap $_\nlipo -extract $( echo ${ARCHS} | sed -e 's/ / -extract /g' ) ${PROJECT_TEMP_ROOT}/${BASE_NAME}/KarteTracker.embeddedframework/KarteTracker.framework/KarteTracker -o ${TARGET_BUILD_DIR}/${EXECUTABLE_FOLDER_PATH}/${TARGET_NAME}\nchmod 644 ${TARGET_BUILD_DIR}/${EXECUTABLE_FOLDER_PATH}/${TARGET_NAME}\nrm -rf ${PROJECT_TEMP_ROOT}/${BASE_NAME}\n";
+			shellScript = "BASE_NAME=karte-tracker-ios-${CURRENT_PROJECT_VERSION}\nMODULES_FOLDER_PATH=${EXECUTABLE_FOLDER_PATH}/Modules\nRESOURCES_FOLDER_PATH=${EXECUTABLE_FOLDER_PATH}/Resources\ncurl -fsL https://github.com/plaidev/karte-tracker-ios/archive/v${CURRENT_PROJECT_VERSION}.zip | tar -xf - -C ${PROJECT_TEMP_ROOT}\nmkdir -p ${TARGET_BUILD_DIR}/${PUBLIC_HEADERS_FOLDER_PATH} && cp ${PROJECT_TEMP_ROOT}/${BASE_NAME}/KarteTracker.embeddedframework/KarteTracker.framework/Headers/*.h $_\nmkdir -p ${TARGET_BUILD_DIR}/${RESOURCES_FOLDER_PATH} && cp -r ${PROJECT_TEMP_ROOT}/${BASE_NAME}/KarteTracker.embeddedframework/KarteTracker.framework/Resources/*.bundle $_\nmkdir -p ${TARGET_BUILD_DIR}/${MODULES_FOLDER_PATH} && cp ${PROJECT_DIR}/${TARGET_NAME}/module.modulemap $_\nlipo -extract $( echo ${ARCHS} | sed -e 's/ / -extract /g' ) ${PROJECT_TEMP_ROOT}/${BASE_NAME}/KarteTracker.embeddedframework/KarteTracker.framework/KarteTracker -o ${TARGET_BUILD_DIR}/${EXECUTABLE_FOLDER_PATH}/${TARGET_NAME}\nchmod 644 ${TARGET_BUILD_DIR}/${EXECUTABLE_FOLDER_PATH}/${TARGET_NAME}\nrm -rf ${PROJECT_TEMP_ROOT}/${BASE_NAME}\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -112,7 +112,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CURRENT_PROJECT_VERSION = 1.5.0;
+				CURRENT_PROJECT_VERSION = 1.5.3;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -123,7 +123,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CURRENT_PROJECT_VERSION = 1.5.0;
+				CURRENT_PROJECT_VERSION = 1.5.3;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
